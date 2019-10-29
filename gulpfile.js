@@ -6,8 +6,6 @@ const gutil = require( 'gulp-util' );
 const svgSprite = require("gulp-svg-sprites");
 const ftp = require( 'vinyl-ftp' );
 
-
-
 let settings = {
     localFolder: 'november',
     folder: 'd.mywfc.ru/local/templates/dixy_2018/',
@@ -17,8 +15,7 @@ let settings = {
     })
 };
 
-gulp.task( 'deploy', function () {
-
+function deploy() {
     const conn = ftp.create( {
         host:     'd.mywfc.ru',
         user:     'root1',
@@ -35,8 +32,7 @@ gulp.task( 'deploy', function () {
     return gulp.src( globs, { base: '.', buffer: false } )
         .pipe(conn.newer( '/' ))
         .pipe(conn.dest( '/' ));
-
-} );
+}
 
 function sprite(){
     return gulp.src(`svg/${settings.localFolder}/*.svg`)
@@ -52,4 +48,10 @@ function scss(){
         .pipe(gulp.dest(settings.folder + '/css'));
 }
 
-gulp.task('build', gulp.series(sprite, scss));
+function watch(){
+    return gulp.watch('scss/**/*.scss', gulp.series(scss));
+}
+
+
+gulp.task('build', gulp.series(sprite, scss, deploy));
+gulp.task('default', gulp.parallel(watch));
