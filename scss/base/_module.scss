@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat:400,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
+@import "keyframes";
+
+$bgsize: 42.03em 213em;
+
 
 h2 {
   font-family: Ubuntu !important;
@@ -336,44 +339,6 @@ section {
   input, select {
     border-radius: 20px;
     border: 2px solid #f58121;
-  }
-}
-
-ul.menu li {
-  a {
-    i {
-      &.icon-loupe {
-        color: #f98321;
-      }
-
-      &:not(.icon-loupe) {
-        /*display: none;*/
-
-        vertical-align: middle;
-
-        &::before {
-          content: '';
-          width: 24px;
-          height: 24px;
-          background: url('../img/halloween/catalogue.png') no-repeat center;
-          background-size: contain;
-          display: inline-block;
-          vertical-align: middle;
-        }
-      }
-    }
-
-    position: relative;
-  }
-
-  &:nth-child(2) a i::before {
-    background: url('../img/halloween/recipes.png') no-repeat center;
-    background-size: contain;
-  }
-
-  &:nth-child(3) a i::before {
-    background: url('../img/halloween/shopping.png') no-repeat center;
-    background-size: contain;
   }
 }
 
@@ -771,31 +736,12 @@ section.list-products {
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
-  a.logo {
-    transform: scale(1.7);
-  }
-
   section.home {
     overflow: hidden;
   }
 
   ul.menu li a i:not(.icon-loupe)::before {
     left: 0;
-  }
-
-  header {
-    width: 100vw;
-
-    .parts ul.sup-menu {
-      &.fixed {
-        flex-wrap: wrap;
-        flex-direction: row;
-      }
-
-      li:not(:last-child) {
-        margin: 0;
-      }
-    }
   }
 
   section.home {

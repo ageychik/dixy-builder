@@ -30,13 +30,15 @@ function deploy() {
     ];
 
     return gulp.src( globs, { base: '.', buffer: false } )
-        .pipe(conn.newer( '/' ))
-        .pipe(conn.dest( '/' ));
+        .pipe(conn.newer('/'))
+        .pipe(conn.dest('/'));
 }
 
 function sprite(){
     return gulp.src(`svg/${settings.localFolder}/*.svg`)
-        .pipe(svgSprite())
+        .pipe(svgSprite({
+            padding: 5
+        }))
         .pipe(gulp.dest(settings.folder + settings.svg()));
 }
 
@@ -49,7 +51,7 @@ function scss(){
 }
 
 function watch(){
-    return gulp.watch('scss/**/*.scss', gulp.series(scss));
+    return gulp.watch('scss/**/*.scss', gulp.series(scss, deploy));
 }
 
 
