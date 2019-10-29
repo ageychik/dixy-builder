@@ -29,7 +29,7 @@ gulp.task( 'deploy', function () {
 
     const globs = [
         settings.folder + settings.svg() + '/svg/*.svg',
-        // settings.folder + '/scss/'
+        settings.folder + 'css/additional.css'
     ];
 
     return gulp.src( globs, { base: '.', buffer: false } )
@@ -38,16 +38,18 @@ gulp.task( 'deploy', function () {
 
 } );
 
-gulp.task('sprite', function () {
+function sprite(){
     return gulp.src(`svg/${settings.localFolder}/*.svg`)
         .pipe(svgSprite())
         .pipe(gulp.dest(settings.folder + settings.svg()));
-});
+}
 
-gulp.task('sass', function () {
+function scss(){
     return gulp.src('./scss/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(concat('style.css'))
+        .pipe(concat('additional.css'))
         .pipe(autoprefixer('last 2 versions'))
         .pipe(gulp.dest(settings.folder + '/css'));
-});
+}
+
+gulp.task('build', gulp.series(sprite, scss));
