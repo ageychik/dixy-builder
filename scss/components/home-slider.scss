@@ -1,0 +1,77 @@
+section.home {
+  .home-slider {
+    button {
+      background: transparent;
+      width: 21px;
+      height: 21px;
+      &.slick-arrow{
+        width: 63px;
+        height: 63px;
+        background: #4e2901;
+        opacity: .6;
+        transition: all .3s;
+        &:before{
+          z-index: 1;
+          background: transparent;
+          position: relative;
+          color: #fff;
+        }
+        &:after{
+          content: '';
+          position: absolute;
+          background: #FF711A;
+          width: 47px;
+          height: 47px;
+          border-radius: 50%;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          margin: auto;
+        }
+      }
+      &::before {
+        width: 11px;
+        height: 11px;
+        background: #020202;
+      }
+    }
+    &:hover{
+      button.slick-arrow{
+        opacity: .8;
+      }
+    }
+    .slick-dots {
+      li {
+        margin: .27vw;
+        &.slick-active{
+          button{
+            cursor: default;
+            background: #fdc393;
+            &:before{
+              background: $cOrange;
+            }
+          }
+        }
+        &:hover{
+          button{
+            background: #fdc393;
+            &:before{
+              background: $cOrange;
+            }
+          }
+        }
+        button{
+          width: 21px;
+          height: 21px;
+          background: transparent;
+          &:before{
+            width: 11px;
+            height: 11px;
+            background: #666;
+          }
+        }
+      }
+    }
+  }
+}

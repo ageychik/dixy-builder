@@ -1,0 +1,9 @@
+section.home{
+  .products-box {
+    .container h2{
+      &:after{
+        display: none;
+      }
+    }
+  }
+}

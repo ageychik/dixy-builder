@@ -20,9 +20,9 @@ header {
       }
     }
     ul {
-      li{
-        a{
-          p{
+      li {
+        a {
+          p {
             font-size: 1.3vw;
           }
         }
@@ -34,7 +34,7 @@ header {
           &.phone {
             margin: 0 3.4vw;
             a p {
-              color: #f98321;
+              color: $cOrange;
               font-size: 1.6vw;
               margin-left: 1.3vw;
             }
@@ -46,9 +46,10 @@ header {
 
           &.download {
             margin: 0 1.3vw;
-            a{
+            a {
               align-items: flex-end;
             }
+
             p {
               color: black;
               font-size: 1.16vw;
@@ -60,32 +61,26 @@ header {
               width: 21px;
               height: 20px;
               align-items: flex-end;
-
-              &:before{
-                background-image: url('../img/november/svg/sprite.svg');
-                background-position: -0.5em -0.5em;
-                width: 100%;
-                height: 100%;
-                background-size: $bgsize;
+              &:before {
+                @include sprite(-0.5em, -0.5em);
+                background-size: 100%;
                 position: absolute;
                 left: 0;
                 right: 0;
                 margin: auto;
               }
               &:after{
-                background-image: url("../img/november/svg/sprite.svg");
-                background-position: -0.5em -21.5em;
-                width: 100%;
-                height: 100%;
+                content: '';
+                @include sprite(-0.5em, (-42.5em / 2));
+                background-size: 100%;
                 background-color: transparent;
                 position: static;
-                background-size: $bgsize;
               }
             }
           }
 
           &.city {
-            border: 1px solid #f98321;
+            border: 1px solid $cOrange;
             border-radius: calc(0.9vw + 16px / 2);
             margin: 0;
             padding: .8vw 2.5vw;
@@ -107,40 +102,47 @@ header {
         padding: 1.6vw 0;
         li {
           margin: 0 .5vw;
+          &.light{
+            a{
+              cursor: default;
+            }
+          }
           a {
             position: relative;
             font-size: 16px;
+            &:hover {
+              p{
+                color: $cOrange;
+              }
+            }
             i {
               width: 41px;
               height: 42px;
-              &:before{
+              &:before {
                 content: '';
-                background-image: url(../img/november/svg/sprite.svg);
                 display: inline-block;
-                width: 41.03em;
-                height: 42em;
-                font-size: 1px;
                 transform: scale(0.85);
                 background-size: $bgsize;
               }
-              &.icon-catalog{
-                &:before{
-                  background-position: -0.5em -42.5em;
+
+              &.icon-catalog {
+                &:before {
+                  @include sprite(-0.5em, -83.5em);
                 }
               }
-              &.icon-cooking{
-                &:before{
-                  background-position: -0.5em -85.5em;
+              &.icon-cooking {
+                &:before {
+                  @include sprite(-0.5em, -125.5em);
                 }
               }
-              &.icon-point{
-                &:before{
-                  background-position: -0.5em -128.5em;
-              }
+              &.icon-point {
+                &:before {
+                  @include sprite(-0.5em, -168.5em);
+                }
               }
               &.icon-loupe {
-                &:before{
-                  background-position: -0.5em -171.5em;
+                &:before {
+                  @include sprite(-0.5em, -211.5em);
                 }
               }
             }
@@ -152,41 +154,41 @@ header {
     }
     @media (max-width: 980px) {
       margin: 0;
-      a.logo{
+      a.logo {
         margin: 0;
-        img{
+        img {
           width: 6.7vw;
         }
       }
     }
     @media (max-width: 767px) {
       margin: 0;
-      a.logo{
+      a.logo {
         margin: 0;
-        img{
+        img {
           width: 6.7vw;
         }
       }
-      ul{
-        &.sup-menu{
+      ul {
+        &.sup-menu {
           &.fixed {
             margin: 0;
             flex-wrap: wrap;
             flex-direction: row;
           }
-          li.city{
+          li.city {
             padding: 10px 35px;
-            a{
-              p{
+            a {
+              p {
                 font-size: 3.46666667vw;
               }
             }
           }
-          li.phone{
+          li.phone {
             margin: 0;
-            a{
+            a {
               font-size: 6.6666666vw;
-              p{
+              p {
                 font-size: 6.6vw;
               }
             }
