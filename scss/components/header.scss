@@ -42,10 +42,15 @@ header  {
         li {
           &.phone {
             margin: 0 3.4vw;
-            a p {
-              color: $hovercolor;
-              font-size: 1.6vw;
-              margin-left: 1.3vw;
+            a {
+              i{
+                color: $hovercolor;
+              }
+              p {
+                color: $hovercolor;
+                font-size: 1.6vw;
+                margin-left: 1.3vw;
+              }
             }
 
             i.icon-phone {
@@ -100,6 +105,9 @@ header  {
               }
               ul {
                 li {
+                  &:hover{
+                    background: rgba(255,255,255,.2);
+                  }
                   a {
                     color: $fontcolor;
                   }
@@ -110,6 +118,7 @@ header  {
               position: relative;
               overflow: hidden;
               .icon-arrow-down {
+                color: $hovercolor;
                 position: absolute;
                 left: 1.5vw;
                 top: 0;
