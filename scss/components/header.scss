@@ -1,5 +1,14 @@
-header {
+$icon_catalog: 'catalog.svg';
+$icon_cooking: 'cook.svg';
+$icon_point: 'marker.svg';
+$icon_loupe: 'search.svg';
+
+header  {
+  background: $bgcolor;
   height: auto;
+  &:after{
+    background-color: $bgcolor;
+  }
   &.fixed {
     height: auto;
   }
@@ -34,7 +43,7 @@ header {
           &.phone {
             margin: 0 3.4vw;
             a p {
-              color: $cOrange;
+              color: $hovercolor;
               font-size: 1.6vw;
               margin-left: 1.3vw;
             }
@@ -51,7 +60,7 @@ header {
             }
 
             p {
-              color: black;
+              color: $fontcolor;
               font-size: 1.16vw;
               margin-left: .55vw;
             }
@@ -62,16 +71,15 @@ header {
               height: 20px;
               align-items: flex-end;
               &:before {
-                @include sprite(-0.5em, -0.5em);
-                background-size: 100%;
+                @include svg(11, 17, 'arrow.down.svg');
                 position: absolute;
                 left: 0;
                 right: 0;
                 margin: auto;
               }
-              &:after{
+              &:after {
                 content: '';
-                @include sprite(-0.5em, (-42.5em / 2));
+                @include svg(23, 11, 'border.down.svg');
                 background-size: 100%;
                 background-color: transparent;
                 position: static;
@@ -80,19 +88,45 @@ header {
           }
 
           &.city {
-            border: 1px solid $cOrange;
+            border: 1px solid $hovercolor;
             border-radius: calc(0.9vw + 16px / 2);
             margin: 0;
-            padding: .8vw 2.5vw;
             cursor: pointer;
-
-            a p {
-              margin-left: 0.6vw;
-              font-size: 1.2vw;
+            .drop-list {
+              left: auto;
+              right: 0;
+              .simplebar-scroll-content{
+                background: $bgcolor;
+              }
+              ul {
+                li {
+                  a {
+                    color: $fontcolor;
+                  }
+                }
+              }
+            }
+            a {
+              position: relative;
+              overflow: hidden;
+              .icon-arrow-down {
+                position: absolute;
+                left: 1.5vw;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                height: 9px;
+              }
+              p {
+                padding: .8vw 2.5vw .8vw 3.2vw;
+                font-size: 1.2vw;
+                margin: 0;
+                color: $fontcolor;
+              }
             }
 
             &:hover a p {
-              color: #FF711A;
+              color: $hovercolor;
             }
           }
         }
@@ -102,17 +136,20 @@ header {
         padding: 1.6vw 0;
         li {
           margin: 0 .5vw;
-          &.light{
-            a{
+          &.light {
+            a {
               cursor: default;
             }
           }
           a {
             position: relative;
             font-size: 16px;
+            p {
+              color: $fontcolor;
+            }
             &:hover {
-              p{
-                color: $cOrange;
+              p {
+                color: $hovercolor;
               }
             }
             i {
@@ -122,33 +159,21 @@ header {
                 content: '';
                 display: inline-block;
                 transform: scale(0.85);
-                background-size: $bgsize;
               }
 
-              &.icon-catalog {
-                &:before {
-                  @include sprite(-0.5em, -83.5em);
-                }
-              }
-              &.icon-cooking {
-                &:before {
-                  @include sprite(-0.5em, -125.5em);
-                }
-              }
-              &.icon-point {
-                &:before {
-                  @include sprite(-0.5em, -168.5em);
-                }
-              }
-              &.icon-loupe {
-                &:before {
-                  @include sprite(-0.5em, -211.5em);
+              @each $icon-name, $icon in (
+                      icon-catalog: $icon_catalog,
+                      icon-cooking: $icon_cooking,
+                      icon-point: $icon_point,
+                      icon-loupe: $icon_loupe
+              ) {
+                &.#{$icon-name}:before {
+                  @include svg(41, 42, $icon);
+
                 }
               }
             }
-
           }
-
         }
       }
     }

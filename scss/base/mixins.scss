@@ -1,11 +1,11 @@
-@mixin sprite($X: 41px, $Y: 42px) {
-  font-size: 1px;
-  width: 100%;
-  height: 100%;
+@mixin svg($W: 41px, $H: 42px, $name: 'logo.jpg') {
+  font-size: 14px;
+  width: $W / 14 + em;
+  height: $H / 14 + em;
   display: inline-block;
   background: {
-    image: url(../img/november/svg/sprite.svg);
-    position: $X $Y;
-    size: 42.03em 254em;
+    image: url('../img/#{$projectName}/#{$name}');
+    size: cover;
+    position: center bottom;
   }
 }

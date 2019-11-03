@@ -7,8 +7,7 @@ section.home {
       &.slick-arrow{
         width: 63px;
         height: 63px;
-        background: #4e2901;
-        opacity: .6;
+        background: rgba(255,130,0,.09);
         transition: all .3s;
         &:before{
           z-index: 1;
@@ -38,7 +37,7 @@ section.home {
     }
     &:hover{
       button.slick-arrow{
-        opacity: .8;
+        background: rgba(255,130,0,1);
       }
     }
     .slick-dots {
