@@ -1,0 +1,38 @@
+footer{
+  background: $bgcolor;
+  color: $hovercolor;
+  .container{
+    .menu{
+      ul{
+        li{
+          a{
+            color: $fontcolor;
+            border-bottom: 1px solid rgba($fontcolor, .3);
+            transition: all .15s;
+            &:hover{
+              border-bottom-color: transparent;
+            }
+          }
+        }
+      }
+    }
+    .contacts{
+      .phone{
+        color: $hovercolor;
+        p{
+          color: $fontcolor;
+        }
+      }
+      .g-open-popup{
+        @include button();
+        i{
+          display: none;
+        }
+        &:hover p,
+        p{
+          color: #020202;
+        }
+      }
+    }
+  }
+}

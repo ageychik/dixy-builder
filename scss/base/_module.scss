@@ -60,34 +60,6 @@ section {
   }
 }
 
-.message.g-open-popup {
-  background: $cOrange;
-  color: #fff;
-  border: 4px solid #fff;
-  position: relative;
-  border-radius: 30px !important;
-  border-radius: 28px !important;
-
-  .icon-paper-plane {
-    display: none;
-  }
-
-  p {
-    color: #ffffff !important;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 30px !important;
-    border: 2px dotted #7ec12a;
-  }
-}
-
 section {
   &.list-products .container .btn, &.home .products-box .container .btn {
     margin: 3vw 0;
@@ -108,16 +80,6 @@ section {
     background: #fff !important;
     color: $cOrange;
     border-color: transparent !important;
-  }
-}
-
-.message.g-open-popup:hover {
-  background: #fff !important;
-  color: $cOrange;
-  border-color: transparent !important;
-
-  p {
-    color: $cOrange !important;
   }
 }
 
