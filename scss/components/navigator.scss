@@ -1,0 +1,155 @@
+$titlecolor: $hovercolor;
+
+section.navigator{
+  border-top: 10px solid $hovercolor;
+  background: $bgcolor;
+  padding: 100px 0;
+  h2{
+    color: $titlecolor;
+    span{
+      color: $titlecolor;
+    }
+  }
+  .filter-panel{
+    .view{
+      li{
+        &.current{
+          cursor: default;
+          i{
+            color: $hovercolor;
+          }
+        }
+        i{
+          color: $fontcolor;
+          &:hover{
+            color: $hovercolor;
+          }
+        }
+      }
+    }
+    .field-container{
+      p:first-of-type{
+        display: none;
+      }
+      .field{
+        i.icon-arrow-down{
+          color: $hovercolor;
+        }
+        i.icon-loupe{
+          color: $hovercolor;
+        }
+        i.icon-cross:hover{
+          color: $hovercolor;
+        }
+        .tt-input{
+          color: $fontcolor;
+          font-size: 1.4vw;
+        }
+        .tt-menu{
+          background: $bgcolor;
+          .simplebar-scroll-content{
+            .tt-suggestion{
+              color: $fontcolor;
+              &:focus,
+              &:hover{
+                background: rgba(0,0,0,.2);
+                color: $hovercolor;
+              }
+            }
+          }
+        }
+        input{
+          border-color: $hovercolor;
+        }
+      }
+    }
+  }
+  .filter-content{
+    background: $bgcolor;
+    .container-fluid.grey{
+      background: $bgcolor;
+      .container:first-of-type{
+        background: #fff;
+        box-sizing: border-box;
+        .simplebar-track.vertical {
+          display: block;
+          width: 7px;
+          right: 10px;
+          top: 20px;
+          bottom: 20px;
+        }
+        .simplebar-track.vertical .simplebar-scrollbar {
+          width: 100%;
+          background: $bgcolor;
+          border-radius: 3px;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+      .list {
+        border: none;
+        border-bottom: 1px dashed #000;
+        margin: 0;
+        .adress {
+          border-right: none;
+          padding: 0 20px 0 0;
+        }
+
+        p {
+          font-family: $fontUbuntu;
+          font-weight: 800;
+        }
+
+        ul {
+          padding: 0;
+
+          p {
+            font-weight: 400;
+          }
+
+          li {
+            width: 25%;
+          }
+        }
+
+        .icon-point:before {
+          content: '';
+          background: url(../img/halloween/map_orenge.png);
+          width: 24px;
+          height: 23px;
+          display: inline-block;
+        }
+
+        .icon-clockwise:before {
+          content: '';
+          background: url(../img/halloween/clock_orange.png);
+          width: 24px;
+          height: 23px;
+          display: inline-block;
+        }
+
+        .icon-credit-card:before {
+          content: '';
+          background: url(../img/halloween/pass_orange.png);
+          width: 24px;
+          height: 23px;
+          display: inline-block;
+        }
+
+        .icon-cocktail:before {
+          content: '';
+          background: url(../img/halloween/vine_orange.png);
+          width: 24px;
+          height: 23px;
+          display: inline-block;
+        }
+
+        .status:before {
+          display: none;
+        }
+      }
+    }
+  }
+}

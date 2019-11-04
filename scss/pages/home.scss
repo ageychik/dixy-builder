@@ -1,5 +1,8 @@
 section.home{
   .products-box {
+    background: $bgcolor;
+    padding: 0;
+    margin: 0;
     .container h2{
       &:after{
         display: none;

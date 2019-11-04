@@ -5,35 +5,6 @@
 
 
 
-
-
-//.products .item {
-//  &:not(.empty) {
-//    box-shadow: 6px 2px 13px 0 #80808059;
-//    min-height: calc(19vw / (360 / 514));
-//    background: url(../img/halloween/bg-item.jpg) no-repeat !important;
-//    background-size: 100% !important;
-//    background-position: center bottom !important;
-//    padding: 25% 20px 0;
-//  }
-//
-//  .preview {
-//    position: absolute;
-//    top: 8%;
-//    left: 0;
-//    right: 0;
-//    margin: auto;
-//  }
-//
-//  .discount p {
-//    font: 600 1.5vw $fontUbuntu;
-//  }
-
-//  }
-//}
-
-/*TODO change full name*/
-
 .full-description {
   display: none !important;
 }
@@ -44,186 +15,13 @@ section.home .container .products-footnote {
   border-radius: 10px;
   margin-top: 30px;
   position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 50px;
-    background: url('../img/halloween/bat3.png') no-repeat center;
-    background-size: contain;
-    left: 30px;
-    bottom: -30px;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 160px;
-    height: 90px;
-    background: url('../img/halloween/bat2.png') no-repeat center;
-    background-size: contain;
-    right: -70px;
-    top: -68px;
-  }
 }
 
-section.home .container .products-footnote li p {
-  margin-bottom: 10px;
-
-  &::first-child {
-    font-weight: bold;
-  }
-}
-
-.blackfriday-bg .container-fluid {
-  &:first-child:not(.lists) {
-    background: url(../img/halloween/bg_booklet.jpg) no-repeat center;
-    background-size: 160%;
-    border-bottom: 10px solid #97d700;
-    border-top: 10px solid $cOrange;
-    margin: 100px 0;
-    background-position: 50% 0px;
-  }
-
-  &.lists {
-    background: #fff;
-
-    .container {
-      box-shadow: 0 0 33px rgba(0, 0, 0, 0.19);
-      padding: 20px;
-    }
-  }
-}
-
-.navigator .lists .container {
-  .simplebar-track.vertical {
-    display: block;
-    width: 7px;
-    right: 10px;
-    top: 20px;
-    bottom: 20px;
-  }
-
-  .simplebar-scroll-content .simplebar-content {
-    padding-right: 10px;
-
-    .list {
-      border: none;
-      border-bottom: 1px dashed #000;
-
-      .adress {
-        border-right: none;
-        padding: 0 20px 0 0;
-      }
-
-      p {
-        font-family: $fontUbuntu;
-        font-weight: 800;
-      }
-
-      ul {
-        padding: 0;
-
-        p {
-          font-weight: 400;
-        }
-
-        li {
-          width: 25%;
-        }
-      }
-
-      .icon-point:before {
-        content: '';
-        background: url(../img/halloween/map_orenge.png);
-        width: 24px;
-        height: 23px;
-        display: inline-block;
-      }
-
-      .icon-clockwise:before {
-        content: '';
-        background: url(../img/halloween/clock_orange.png);
-        width: 24px;
-        height: 23px;
-        display: inline-block;
-      }
-
-      .icon-credit-card:before {
-        content: '';
-        background: url(../img/halloween/pass_orange.png);
-        width: 24px;
-        height: 23px;
-        display: inline-block;
-      }
-
-      .icon-cocktail:before {
-        content: '';
-        background: url(../img/halloween/vine_orange.png);
-        width: 24px;
-        height: 23px;
-        display: inline-block;
-      }
-
-      .status:before {
-        display: none;
-      }
-    }
-  }
-
-  .simplebar-track.vertical .simplebar-scrollbar {
-    width: 100%;
-    background: #78be20;
-    border-radius: 3px;
-
-    &:before {
-      display: none;
-    }
-  }
-}
 
 section {
   &.subscription {
     background: #f58121;
     border-bottom: 10px solid #97d700;
-  }
-
-  &.home .container {
-    &.catalog-wrapper {
-      position: relative;
-
-      h2 {
-        position: absolute;
-        top: -92px;
-        left: 0;
-        right: 0;
-      }
-    }
-
-    .all-catalogs-link {
-      background: #fff;
-      color: #f58121;
-      border: transparent;
-      position: relative;
-      border-radius: 25px;
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        border-radius: 30px;
-        border: 2px dotted #fff;
-      }
-
-      &:hover {
-        background: #f58121;
-        color: #fff;
-      }
-    }
   }
 }
 
@@ -348,38 +146,6 @@ section {
       }
     }
   }
-
-  &.subscription {
-    background: url(../img/halloween/bg_subscribe.jpg);
-    position: relative;
-
-    &::before {
-      content: '';
-      width: 64px;
-      height: 31px;
-      background: url('../img/halloween/bat3.png') no-repeat center;
-      background-size: contain;
-      top: -13%;
-      left: 10%;
-      position: absolute;
-    }
-
-    &::after {
-      content: '';
-      width: 124px;
-      height: 84px;
-      background: url('../img/halloween/bat5.png') no-repeat center;
-      background-size: contain;
-      top: -8%;
-      right: 10%;
-      position: absolute;
-    }
-  }
-}
-
-.subscription .container form {
-  background: #fb8b03;
-  border: 1px solid #fff;
 }
 
 footer {
@@ -702,20 +468,6 @@ section.list-products {
 
     .list .services, .container .simplebar-scroll-content .simplebar-content .list ul li {
       width: 100%;
-    }
-  }
-
-  .subscription .container {
-    h2 {
-      width: 100%;
-    }
-
-    form {
-      border-color: transparent;
-
-      input {
-        padding: 10px;
-      }
     }
   }
 

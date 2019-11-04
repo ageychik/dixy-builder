@@ -5,23 +5,24 @@ $toggleborder: $hovercolor;
 
 section.home {
   .home-slider {
-      padding: 0;
+    padding: 0;
     button {
       background: transparent;
       width: 21px;
       height: 21px;
-      &.slick-arrow{
+      &.slick-arrow {
         width: 63px;
         height: 63px;
-        background: rgba($arrowborder,.3);
+        background: rgba($arrowborder, .3);
+        box-shadow: none;
         transition: all .3s;
-        &:before{
+        &:before {
           z-index: 1;
           background: transparent;
           position: relative;
           color: $arrowcolor;
         }
-        &:after{
+        &:after {
           content: '';
           position: absolute;
           background: $arrowborder;
@@ -41,36 +42,36 @@ section.home {
         background: #020202;
       }
     }
-    &:hover{
-      button.slick-arrow{
+    &:hover {
+      button.slick-arrow {
         background: rgba($arrowborder, .5);
       }
     }
     .slick-dots {
       li {
         margin: .27vw;
-        &.slick-active{
-          button{
+        &.slick-active {
+          button {
             cursor: default;
             background: $toggleborder;
-            &:before{
+            &:before {
               background: $togglecolor;
             }
           }
         }
-        &:hover{
-          button{
+        &:hover {
+          button {
             background: $toggleborder;
-            &:before{
+            &:before {
               background: $togglecolor;
             }
           }
         }
-        button{
+        button {
           width: 21px;
           height: 21px;
           background: transparent;
-          &:before{
+          &:before {
             width: 11px;
             height: 11px;
             background: $toggleborder;

@@ -9,3 +9,39 @@
     position: center bottom;
   }
 }
+
+@mixin image($size: cover, $position: center, $name: 'custom-bg.jpg'){
+  background: {
+    size: $size;
+    position: $position;
+    image: url('../img/#{$projectName}/#{$name}');
+  }
+}
+
+@mixin button($color: $hovercolor, $textcolor: #000, $bordercolor: $hovercolor, $hover: #fff){
+  background: $color;
+  color: $textcolor;
+  border: transparent;
+  position: relative;
+  border-radius: calc(2vw + 16px / 2);
+  letter-spacing: 0.1em;
+  &:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: calc(2vw + 16px / 2);
+    border: 2px dotted $bordercolor;
+    transition: all .3s;
+  }
+
+  &:hover {
+    background: $hover;
+    color: $textcolor;
+    &:after{
+      border-color: $hover
+    }
+  }
+}

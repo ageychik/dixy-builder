@@ -1,0 +1,16 @@
+$headercolor: #fff;
+
+.blackfriday-bg .container-fluid:first-child:not(.lists){
+  @include image($name: 'catalog-bg.jpg');
+}
+.catalog-wrapper{
+  h2{
+    color: $headercolor;
+    &:after{
+      display: none !important;
+    }
+  }
+  .all-catalogs-link {
+    @include button();
+  }
+}
