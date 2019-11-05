@@ -1,0 +1,49 @@
+.breadcrumb {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+
+  .container ul {
+    justify-content: flex-end;
+    margin-top: 50px;
+
+    li {
+      z-index: 1;
+
+      a {
+        border: none;
+        padding: 0;
+        color: $fontcolor;
+        &:hover {
+          color: $hovercolor;
+        }
+      }
+
+      p {
+        color: $hovercolor;
+      }
+
+      &.arrow {
+        margin: 0 5px;
+
+        .icon-arrow-right {
+          font-size: 100%;
+
+          &:before {
+            content: '/';
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    top: 35px;
+
+    .container ul {
+      justify-content: flex-start;
+      margin-top: calc(110px - 3.46666667vw);
+      margin-bottom: 0;
+    }
+  }
+}

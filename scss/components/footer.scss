@@ -25,6 +25,20 @@ footer {
           margin-bottom: 20px;
           font-family: $fontUbuntu;
         }
+        &:last-of-type{
+          h4{
+            overflow: hidden;
+            white-space: nowrap;
+            br{
+              display: none;
+            }
+            &:before{
+              content: 'Акции';
+              display: inline-block;
+              width: 100%;
+            }
+          }
+        }
       }
       ul {
         li {

@@ -68,6 +68,9 @@ header  {
               color: $fontcolor;
               font-size: 1.16vw;
               margin-left: .55vw;
+              &:hover{
+                color: $hovercolor;
+              }
             }
 
             .icon-download-main {
