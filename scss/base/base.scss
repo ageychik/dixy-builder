@@ -1,6 +1,5 @@
 h2 {
   font: 600 2.4vw $fontUbuntu;
-  color: #000;
   margin-bottom: 3.5vw;
   span{
     color: #000;
@@ -15,15 +14,5 @@ h2 {
   max-width: 1200px;
   margin: auto;
   padding: 0 30px;
-  box-sizing: content-box;
-}
-
-.btn {
-  background: $cOrange;
-  color: #fff;
-  border: 3px dashed #7ec12a;
-
-  > i {
-    display: none;
-  }
+  box-sizing: border-box;
 }

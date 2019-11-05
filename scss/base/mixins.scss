@@ -1,4 +1,5 @@
 @mixin svg($W: 41px, $H: 42px, $name: 'logo.jpg') {
+  content: '';
   font-size: 14px;
   width: $W / 14 + em;
   height: $H / 14 + em;
@@ -22,9 +23,12 @@
   background: $color;
   color: $textcolor;
   border: transparent;
-  position: relative;
+  position: relative !important;
   border-radius: calc(2vw + 16px / 2);
   letter-spacing: 0.1em;
+  .icon-arrow-right{
+    display: none;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -42,6 +46,12 @@
     color: $textcolor;
     &:after{
       border-color: $hover
+    }
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    border-radius: 20px;
+    &:after{
+      border-radius: 25px;
     }
   }
 }

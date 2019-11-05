@@ -1,36 +1,82 @@
-footer{
+$icon_vk: 'vk.svg';
+$icon_facebook: 'facebook.svg';
+$icon_ok: 'ok.svg';
+$icon_youtube: 'youtube.svg';
+$icon_instagram: 'instagram.svg';
+
+footer {
   background: $bgcolor;
   color: $hovercolor;
-  .container{
-    .menu{
-      ul{
-        li{
-          a{
+  height: auto;
+  padding: 40px 0;
+  .container {
+    .menu {
+      div {
+        h4 {
+          height: auto;
+          min-height: 0;
+          margin-bottom: 20px;
+          text-transform: none;
+          font-family: $fontUbuntu;
+          font-weight: 600;
+        }
+
+        ul li {
+          margin-bottom: 20px;
+          font-family: $fontUbuntu;
+        }
+      }
+      ul {
+        li {
+          a {
             color: $fontcolor;
             border-bottom: 1px solid rgba($fontcolor, .3);
             transition: all .15s;
-            &:hover{
+            &:hover {
               border-bottom-color: transparent;
             }
           }
         }
       }
     }
-    .contacts{
-      .phone{
+    .contacts {
+      .phone {
         color: $hovercolor;
-        p{
+        p {
           color: $fontcolor;
         }
       }
-      .g-open-popup{
+      .g-open-popup {
         @include button();
-        i{
+        i {
           display: none;
         }
         &:hover p,
-        p{
+        p {
           color: #020202;
+        }
+      }
+      .social li {
+        border: none;
+        a {
+          i {
+            font-size: 0 !important;
+            width: 100%;
+            height: 100%;
+            @each $icon-name, $icon in (
+                    icon-vk-bg: $icon_vk,
+                    icon-facebook: $icon_facebook,
+                    icon-odnoklassniki: $icon_ok,
+                    icon-youtube: $icon_youtube,
+                    icon-instagram: $icon_instagram
+            ) {
+              &.#{$icon-name}:before {
+                @include svg(36, 36, $icon);
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
         }
       }
     }

@@ -152,4 +152,9 @@ section.navigator{
       }
     }
   }
+  @media (max-width: 767px) and (orientation: portrait) {
+    h2{
+      font-size: 9vw;
+    }
+  }
 }

@@ -1,11 +1,38 @@
-section.home{
+section.home {
   .products-box {
     background: $bgcolor;
-    padding: 0;
     margin: 0;
-    .container h2{
-      &:after{
-        display: none;
+    .container {
+      h2 {
+        &:after {
+          display: none;
+        }
+        @media (max-width: 767px) and (orientation: portrait){
+          font-size: 9.3vw;
+          width: auto;
+        }
+      }
+      a.btn {
+        @include button();
+      }
+      .products-footnote {
+        padding: 30px;
+        border: 1px dotted $hovercolor;
+        border-radius: 10px;
+        margin: 30px -15px 0;
+        box-sizing: border-box;
+        position: relative;
+        li{
+          flex: 1;
+          padding: 0 15px;
+          p{
+            color: $fontcolor;
+            margin-bottom: 20px;
+            &:last-of-type{
+              margin: 0;
+            }
+          }
+        }
       }
     }
   }

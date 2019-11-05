@@ -1,33 +1,48 @@
+$headercolor: $hovercolor;
+
 section.subscription{
   background: $bgcolor;
   border-bottom-color: $hovercolor;
-  h2{
-    color: $hovercolor;
-  }
-  .container form {
-    background: $bgcolor;
-    border: 1px solid $hovercolor;
-    input{
-      &::-webkit-input-placeholder {
-        color: $fontcolor;
+
+  .container {
+    h2{
+      color: $headercolor;
+      width: auto;
+    }
+    form {
+      background: $bgcolor;
+      border: 1px solid $hovercolor;
+      input{
+        &::-webkit-input-placeholder {
+          color: $fontcolor;
+        }
+        &::-moz-placeholder {
+          color: $fontcolor;
+        }
+        &:-ms-input-placeholder {
+          color: $fontcolor;
+        }
+        &:-moz-placeholder {
+          color: $fontcolor;
+        }
       }
-      &::-moz-placeholder {
-        color: $fontcolor;
-      }
-      &:-ms-input-placeholder {
-        color: $fontcolor;
-      }
-      &:-moz-placeholder {
-        color: $fontcolor;
+      button{
+        color: #020202;
+        letter-spacing: 0.1em;
+        &:hover{
+          background: $bgcolor;
+          color: $fontcolor;
+          border-color: $hovercolor;
+        }
       }
     }
-    button{
-      color: #020202;
-      letter-spacing: 0.1em;
-      &:hover{
-        background: $bgcolor;
-        color: $fontcolor;
-        border-color: $hovercolor;
+    @media (max-width: 767px) and (orientation: portrait){
+      form{
+        border-color: transparent;
+        input{
+          padding: 10px;
+          background: rgba($hovercolor, .6);
+        }
       }
     }
   }
