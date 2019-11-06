@@ -1,4 +1,4 @@
-$headercolor: $hovercolor;
+$headercolor: #020202;
 
 .list-products,
 .products-box {
@@ -42,7 +42,7 @@ $headercolor: $hovercolor;
         width: 100%;
         height: 100%;
         z-index: 1;
-        box-shadow: 0 1px 10px rgba($hovercolor, 0.7);
+        box-shadow: 0 1px 10px rgba($fontcolor, 0.7);
         .product-description{
           background: #fff;
           position: relative;

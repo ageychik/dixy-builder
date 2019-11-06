@@ -1,11 +1,9 @@
 $arrowcolor: #000;
 $arrowborder: $hovercolor;
-$togglecolor: $arrowcolor;
 $toggleborder: $hovercolor;
 
 section.home {
   .home-slider {
-    padding: 0;
     button {
       background: transparent;
       width: 21px;
@@ -20,7 +18,7 @@ section.home {
           z-index: 1;
           background: transparent;
           position: relative;
-          color: $arrowcolor;
+          color: #fff;
         }
         &:after {
           content: '';
@@ -53,17 +51,17 @@ section.home {
         &.slick-active {
           button {
             cursor: default;
-            background: $toggleborder;
+            background: rgba($arrowborder, .5);
             &:before {
-              background: $togglecolor;
+              background: $arrowborder;
             }
           }
         }
         &:hover {
           button {
-            background: $toggleborder;
+            background: rgba($arrowborder, .5);
             &:before {
-              background: $togglecolor;
+              background: $arrowborder;
             }
           }
         }
@@ -74,7 +72,7 @@ section.home {
           &:before {
             width: 11px;
             height: 11px;
-            background: $toggleborder;
+            background: #666;
           }
         }
       }
