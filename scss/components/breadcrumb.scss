@@ -6,7 +6,7 @@
 
   .container ul {
     justify-content: flex-end;
-    margin-top: 50px;
+    margin-top: 20px;
 
     li {
       z-index: 1;
@@ -38,7 +38,7 @@
     }
   }
   @media (max-width: 767px) and (orientation: portrait) {
-    top: 35px;
+    top: 0;
 
     .container ul {
       justify-content: flex-start;

@@ -1,0 +1,98 @@
+section.recipes{
+  background: $bgcolor;
+  h2 {
+    text-align: left;
+    width: 100%;
+    color: $hovercolor;
+    span {
+      color: $hovercolor;
+    }
+  }
+  .nav{
+    background: $bgcolor;
+    li{
+      color: $fontcolor;
+      &:hover{
+        color: $hovercolor;
+      }
+      &.current{
+        color: $hovercolor;
+      }
+    }
+  }
+  .container-fluid{
+    background: $bgcolor;
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    h2{
+      font-size: 8vw;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+section.recipes-details{
+  background: $bgcolor;
+  h2 {
+    text-align: left;
+    width: 100%;
+    color: $hovercolor;
+    span {
+      color: $hovercolor;
+    }
+  }
+  .arrows{
+    a{
+      color: $fontcolor;
+    }
+    .arrow{
+      i{
+        color: $hovercolor;
+      }
+    }
+  }
+  .recipes-title{
+    h2{
+      text-align: center;
+      color: $fontcolor;
+    }
+    .labels{
+      li {
+        i{
+          color: $hovercolor;
+        }
+        p{
+          color: $hovercolor;
+        }
+      }
+    }
+  }
+  .container-fluid.description{
+    background: $bgcolor;
+    color: $fontcolor;
+    h3{
+      color: $hovercolor;
+    }
+    ul{
+      li{
+        p{
+          background: $bgcolor !important;
+        }
+      }
+    }
+    .list.coocking {
+      ul{
+        li:before{
+          color: $hovercolor;
+          border-color: $hovercolor;
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    h2{
+      font-size: 8vw;
+      margin-bottom: 50px;
+    }
+  }
+}

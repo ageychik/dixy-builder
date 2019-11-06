@@ -11,8 +11,8 @@ section.list-products {
     h2 {
       text-align: left;
       width: 100%;
-      margin-top: 30px;
       color: $hovercolor;
+      margin-top: 0;
       span {
         color: $hovercolor;
       }
@@ -120,7 +120,7 @@ section.list-products {
   @media (max-width: 767px) and (orientation: portrait) {
     .container {
       h2{
-        font-size: 9.3vw;
+        font-size: 8vw;
         margin-bottom: 50px;
       }
       &:before {

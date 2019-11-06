@@ -13,4 +13,7 @@ h2 {
   margin: auto;
   padding: 0 30px;
   box-sizing: border-box;
+  @media (max-width: 767px) and (orientation: portrait) {
+    width: 100%;
+  }
 }
