@@ -1,6 +1,6 @@
 @mixin svg($W: 41px, $H: 42px, $name: 'logo.jpg') {
   content: '';
-  font-size: 14px;
+  font-size: 14px;      /* TODO change to 100% */
   width: $W / 14 + em;
   height: $H / 14 + em;
   display: inline-block;
@@ -19,7 +19,7 @@
   }
 }
 
-@mixin button($color: $hovercolor, $textcolor: #000, $bordercolor: $hovercolor, $hover: #fff){
+@mixin button($color: $hovercolor, $textcolor: #fff, $bordercolor: $morecolor, $hover: $hovercolor){
   background: $color;
   color: $textcolor;
   border: transparent;
@@ -27,6 +27,9 @@
   border-radius: calc(2vw + 16px / 2);
   letter-spacing: 0.1em;
   .icon-arrow-right{
+    display: none;
+  }
+  .icon-arrow-down{
     display: none;
   }
   &:after {
@@ -42,8 +45,6 @@
   }
 
   &:hover {
-    background: $hover;
-    color: $textcolor;
     &:after{
       border-color: $hover
     }
@@ -54,4 +55,5 @@
       border-radius: 25px;
     }
   }
+
 }

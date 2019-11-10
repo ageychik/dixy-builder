@@ -1,9 +1,9 @@
-$titlecolor: $hovercolor;
+$titlecolor: $fontcolor;
 
 section.navigator{
-  border-top: 10px solid $hovercolor;
+  border-top: 10px solid $morecolor;
   background: $bgcolor;
-  padding: 100px 0;
+  padding: 100px 0 50px;
   h2{
     color: $titlecolor;
     span{
@@ -72,6 +72,8 @@ section.navigator{
       .container:first-of-type{
         background: #fff;
         box-sizing: border-box;
+        width: calc(83.59375vw - 60px);
+        box-shadow: 0 0 15px rgba($fontcolor, 0.3);
         .simplebar-track.vertical {
           display: block;
           width: 7px;
@@ -81,7 +83,7 @@ section.navigator{
         }
         .simplebar-track.vertical .simplebar-scrollbar {
           width: 100%;
-          background: $bgcolor;
+          background: $morecolor;
           border-radius: 3px;
 
           &:before {
@@ -112,6 +114,9 @@ section.navigator{
 
           li {
             width: 25%;
+            &.error{
+              filter: grayscale(100%);
+            }
           }
         }
 

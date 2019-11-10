@@ -1,8 +1,8 @@
-$headercolor: $hovercolor;
+$headercolor: #fff;
 
 section.subscription{
-  background: $bgcolor;
-  border-bottom-color: $hovercolor;
+  background: $hovercolor;
+  border-bottom-color: $morecolor;
 
   .container {
     h2{
@@ -10,29 +10,29 @@ section.subscription{
       width: auto;
     }
     form {
-      background: $bgcolor;
-      border: 1px solid $hovercolor;
+      background: transparent;
+      border: 1px solid #fff;
       input{
         &::-webkit-input-placeholder {
-          color: $fontcolor;
+          color: #fff;
         }
         &::-moz-placeholder {
-          color: $fontcolor;
+          color: #fff;
         }
         &:-ms-input-placeholder {
-          color: $fontcolor;
+          color: #fff;
         }
         &:-moz-placeholder {
-          color: $fontcolor;
+          color: #fff;
         }
       }
       button{
-        color: #020202;
+        color: $hovercolor;
         letter-spacing: 0.1em;
         &:hover{
-          background: $bgcolor;
-          color: $fontcolor;
-          border-color: $hovercolor;
+          background: $hovercolor;
+          color: $bgcolor;
+          border-color: $bgcolor;
         }
       }
     }

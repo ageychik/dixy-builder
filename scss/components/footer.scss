@@ -6,10 +6,10 @@ $icon_instagram: 'instagram.svg';
 
 footer {
   background: $bgcolor;
-  color: $hovercolor;
   height: auto;
   padding: 40px 0;
   .container {
+    align-items: flex-start;
     .menu {
       div {
         h4 {
@@ -67,7 +67,7 @@ footer {
         }
         &:hover p,
         p {
-          color: #020202;
+          color: #fff;
         }
       }
       .social li {

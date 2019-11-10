@@ -1,5 +1,10 @@
-section.recipes{
-  background: $bgcolor;
+$icon_soup: 'ramen.svg';
+$icon_fish: 'fried-chicken.svg';
+$icon_salad: 'salad.svg';
+$icon_cake: 'panna-cotta.svg';
+
+section.recipes {
+  background: #f6f6f6;
   h2 {
     text-align: left;
     width: 100%;
@@ -8,30 +13,224 @@ section.recipes{
       color: $hovercolor;
     }
   }
-  .nav{
+  .nav {
     background: $bgcolor;
-    li{
+    box-shadow: 0 0 15px rgba($fontcolor, 0.3);
+    li {
       color: $fontcolor;
-      &:hover{
+      a {
+        p {
+          font: {
+            family: $fontUbuntu;
+            weight: 600;
+            size: 1.2vw;
+          };
+        }
+        i {
+          @each $icon-name, $icon in (
+                  icon-soup: $icon_soup,
+                  icon-fish: $icon_fish,
+                  icon-salad: $icon_salad,
+                  icon-cake: $icon_cake,
+          ) {
+            &.#{$icon-name}:before {
+              @include svg(60, 60, $icon);
+            }
+          }
+        }
+      }
+      &:hover {
         color: $hovercolor;
       }
-      &.current{
+      &.current {
         color: $hovercolor;
       }
     }
   }
-  .container-fluid{
-    background: $bgcolor;
+  .container-fluid {
+    background: #f6f6f6;
+    .container {
+      .items {
+        .item {
+          position: relative;
+          .description{
+            position: static;
+            height: auto;
+            hr{
+              display: none;
+            }
+            h4{
+              font: {
+                family: $fontUbuntu;
+                weight: 600;
+              }
+            }
+            ul{
+              position: absolute;
+              top: 0;
+              bottom: auto;
+              background: $hovercolor;
+              flex-direction: column;
+              padding: 1.5vw 1.5vw 0;
+              &:after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                background: $hovercolor;
+                top: calc(100% - 15px);
+                height: 30px;
+                left: 0;
+                right: 0;
+                border-radius: 50%;
+              }
+              li{
+                display: flex;
+                margin: 0 0 1.5vw 0 !important;
+                position: relative;
+                z-index: 1;
+                i{
+                  @each $icon-name, $icon in (
+                          icon-clockwise: 'time.svg',
+                          icon-lightning: 'heart.svg',
+                          icon-support: 'serv.svg',
+                  ) {
+                    &.#{$icon-name}:before {
+                      @include svg(27, 27, $icon);
+                      font-size: 100%;
+                    }
+                  }
+                  &.icon-clockwise{
+                    & + p{
+                      &:before{
+                        content: 'Время:';
+                        font-family: $fontCaveat;
+                        display: block;
+                      }
+                    }
+                  }
+                  &.icon-lightning{
+                    & + p{
+                      &:before{
+                        content: 'Каллорийность:';
+                        font-family: $fontCaveat;
+                        display: block;
+                      }
+                    }
+                  }
+                  &.icon-support{
+                    & + p{
+                      &:before{
+                        content: 'Порций:';
+                        font-family: $fontCaveat;
+                        display: block;
+                      }
+                    }
+                  }
+                }
+                p{
+                  font-size: 1.1vw;
+                  color: #fff;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+          @media (min-width: 767px){
+            &:not(.recipe-day){
+              overflow: hidden;
+              margin-bottom: 30px;
+              width: calc(33.3% - 30px);
+              position: relative;
+              .image-box{
+                border-radius: 50% / 50px;
+                transform: scale(1.1) translateY(-10%);
+                border-bottom: 10px solid $hovercolor;
+              }
+            }
+            &.recipe-day {
+              width: calc(50% - 15px);
+              overflow: hidden;
+              .image-box{
+                height: auto;
+                padding-top: 100%;
+                width: 60%;
+                float: right;
+                transform: translate(20%, -50%);
+                top: 50%;
+                border-radius: 50%;
+                border-left: 10px solid $hovercolor;
+
+              }
+              .label{
+                background: transparent;
+                top: 50%;
+                left: 0;
+                width: auto;
+                height: auto;
+                padding: 0.95vw 1.171875vw 1.328125vw;
+                p{
+                  margin: 0;
+                  text-transform: none;
+                  font: {
+                    family: 'Caveat', cursive;
+                    size: 1.3vw;
+                  }
+                  color: $fontcolor;
+                }
+                .icon-cooking{
+                  display: none;
+                }
+              }
+              .description{
+                width: 50%;
+                margin-top: calc(35% + 3.4375vw);
+                ul{
+                  li{
+                    margin: 0 0 1.5vw 0;
+                  }
+                }
+              }
+
+            }
+          }
+          @media (max-width: 767px) and (orientation: portrait) {
+            height: auto;
+            position: relative;
+            padding-bottom: 1em;
+            .description{
+              padding: 1em;
+              h4{
+                font: 600 3.7vw/1.3 $fontUbuntu;
+              }
+              ul{
+                li{
+                  i{
+                    font-size: 0.7em !important;
+                  }
+                  p{
+                    font-size: 0.7em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .btn.view-more{
+        @include button();
+        box-shadow: none;
+      }
+    }
   }
   @media (max-width: 767px) and (orientation: portrait) {
-    h2{
+    h2 {
       font-size: 8vw;
       margin-bottom: 50px;
     }
   }
 }
 
-section.recipes-details{
+section.recipes-details {
   background: $bgcolor;
   h2 {
     text-align: left;
@@ -41,48 +240,48 @@ section.recipes-details{
       color: $hovercolor;
     }
   }
-  .arrows{
-    a{
+  .arrows {
+    a {
       color: $fontcolor;
     }
-    .arrow{
-      i{
+    .arrow {
+      i {
         color: $hovercolor;
       }
     }
   }
-  .recipes-title{
-    h2{
+  .recipes-title {
+    h2 {
       text-align: center;
       color: $fontcolor;
     }
-    .labels{
+    .labels {
       li {
-        i{
+        i {
           color: $hovercolor;
         }
-        p{
+        p {
           color: $hovercolor;
         }
       }
     }
   }
-  .container-fluid.description{
+  .container-fluid.description {
     background: $bgcolor;
     color: $fontcolor;
-    h3{
+    h3 {
       color: $hovercolor;
     }
-    ul{
-      li{
-        p{
+    ul {
+      li {
+        p {
           background: $bgcolor !important;
         }
       }
     }
     .list.coocking {
-      ul{
-        li:before{
+      ul {
+        li:before {
           color: $hovercolor;
           border-color: $hovercolor;
         }
@@ -90,7 +289,7 @@ section.recipes-details{
     }
   }
   @media (max-width: 767px) and (orientation: portrait) {
-    h2{
+    h2 {
       font-size: 8vw;
       margin-bottom: 50px;
     }

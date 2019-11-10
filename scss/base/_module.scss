@@ -33,20 +33,6 @@ section {
     left: 0;
   }
 
-  section.home {
-    .container .products-footnote {
-      width: 90vw;
-      box-sizing: border-box;
-
-      &::after {
-        width: 136px;
-        height: 67px;
-        right: 0;
-        top: -45px;
-      }
-    }
-
-  }
 
   .blackfriday-bg .container-fluid:first-child:not(.lists) {
     background-size: cover;

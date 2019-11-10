@@ -1,7 +1,9 @@
 $headercolor: #fff;
+$bordercolor: $hovercolor;
 
 .blackfriday-bg .container-fluid:first-child:not(.lists) {
   @include image($name: 'catalog-bg.jpg');
+  border-top: 10px solid $bordercolor;
 }
 
 .catalog-wrapper {

@@ -1,4 +1,5 @@
 $headercolor: #020202;
+$productbg: 'product-bg.jpg';
 
 .list-products,
 .products-box {
@@ -53,7 +54,7 @@ $headercolor: #020202;
           box-sizing: border-box;
           .dl {
             font: italic 400 0.8vw 'Caveat', cursive;
-            color: #020202;
+            color: $hovercolor;
             margin: 0 0 .8vw;
           }
           .name {
@@ -75,7 +76,7 @@ $headercolor: #020202;
             top: -100%;
             transform: translateX(calc(-50% - 0.5px));
             margin: auto;
-            background: $bgcolor;
+            @include image($size: 75% auto, $position: bottom center, $name: $productbg);
           }
         }
         &:hover {
@@ -123,7 +124,7 @@ $headercolor: #020202;
         }
       }
       .product-main {
-        background: $bgcolor;
+        @include image($size: 110% 125%, $position: top, $name: $productbg);
         position: relative;
         height: 60%;
         display: flex;

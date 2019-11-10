@@ -5,6 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const gutil = require('gulp-util');
 const ftp = require('vinyl-ftp');
 const fs = require('fs');
+const sourcemaps = require('gulp-sourcemaps');
 const env = fs.readFileSync('.env.json', 'utf8') || null;
 
 let dev = JSON.parse(env);
@@ -34,9 +35,11 @@ function copy() {
 
 function scss() {
     return gulp.src('./scss/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(concat('additional.css'))
         .pipe(autoprefixer('last 2 versions'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('build/css'))
 }
 

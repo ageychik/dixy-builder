@@ -19,7 +19,7 @@ section.list-products {
     }
 
     .filter-panel {
-      box-shadow: 0 0 15px rgba($hovercolor, 0.3);
+      box-shadow: 0 0 15px rgba($fontcolor, 0.3);
       background: $bgcolor;
       padding: 0 20px;
       box-sizing: border-box;
@@ -97,8 +97,9 @@ section.list-products {
     }
   }
   .products-footnote {
+    display: none;
     padding: 30px;
-    border: 1px dotted $hovercolor;
+    border: 1px dotted $fontcolor;
     border-radius: 10px;
     margin: 30px auto 0;
     box-sizing: border-box;
